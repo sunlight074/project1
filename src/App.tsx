@@ -1,12 +1,19 @@
-
+import { Route,Switch ,BrowserRouter} from "react-router-dom";
+import About from "./pages/page_about";
+import Home from "./pages/page_home";
 
 function App() {
   return (
-    <div className="App">
-      <div className="text text-red-500 mx-16">
-        test
-      </div>
-    </div>
+    <BrowserRouter>
+      <Switch>
+          <Route path="/page/home" exact>
+            <Home />
+          </Route>
+          <Route path="/page/about" exact>
+            <About />
+          </Route>
+      </Switch>
+    </BrowserRouter>   
   );
 }
 

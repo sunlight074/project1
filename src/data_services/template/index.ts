@@ -4,10 +4,10 @@ import { mockApi } from '../../utils/client';
 // https://jsonplaceholder.typicode.com
 
 export interface GetTemplate {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
+  key: string,
+  name: string,
+  age: number,
+  address: string,
 }
 
 export type ResBodyGetTemplate = GenResponseBody<GetTemplate[]>;

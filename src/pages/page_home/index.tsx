@@ -1,42 +1,36 @@
 import React from 'react'
+import { Skeleton ,Table } from 'antd';
 import {useGetUser} from './hook'
 
 const Home: React.FC = () => {
     const  {data , isLoading}= useGetUser()
-    console.log('data =>' ,data)
+
+    const columns = [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        key: 'name',
+      },
+      {
+        title: 'Age',
+        dataIndex: 'age',
+        key: 'age',
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+      },
+    ];
+
     return (
-        <div className='mx-5'>
+        <div className='m-10'>
             {
             isLoading ? 
                 (
-                    <div>กำลังโหลดข้อมูล ..</div> 
+                  <Skeleton active />
                 ) : ( 
-                    // <div className='flex text-red-500'>
-                    //     {
-                    //         data?.result.map((value ,index) => 
-                    //             <li key={index}>
-                    //                 <ul>{value.userId}</ul>
-                    //                 <ul>{value.title}</ul>
-                    //             </li>
-                    //         )
-                    //     }
-                    // </div>
-                    <table className="table-auto">
-                        <thead>
-                            <tr>
-                            <th>Song</th>
-                            <th>Artist</th>
-                            <th>Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                            <td>Malcolm Lockyer</td>
-                            <td>1961</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <Table dataSource={data?.result} columns={columns} />
                 )
             }
         </div>

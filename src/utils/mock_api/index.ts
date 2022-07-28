@@ -17,4 +17,5 @@ const handlers = [rest.get(fakeApi('api/users'), getTemplate)];
 
 const runWorker = (): SetupWorkerApi => setupWorker(...handlers);
 
+
 export { handlers, fakeApi, runWorker };

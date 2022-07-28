@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { runWorker } from '../src/utils/mock_api/index';
 import { QueryClient, QueryClientProvider } from "react-query";
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

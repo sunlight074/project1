@@ -4,22 +4,16 @@ import { GetTemplate, type ResBodyGetTemplate } from '../../data_services/templa
 
 const mockGetTemplateResult: GetTemplate[] = [
   {
-    userId: 1,
-    id: 1,
-    title: 'test-1',
-    completed: false,
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
   },
   {
-    userId: 2,
-    id: 2,
-    title: 'test-2',
-    completed: true,
-  },
-  {
-    userId: 3,
-    id: 3,
-    title: 'test-3',
-    completed: false,
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
   },
 ];
 
@@ -28,6 +22,7 @@ const getTemplate: ResponseResolverFn = (_req, res, ctx) => {
     ctx.json<ResBodyGetTemplate>({
       result: mockGetTemplateResult,
     }),
+    ctx.delay(500),
   );
 };
 

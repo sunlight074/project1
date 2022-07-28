@@ -1,0 +1,1 @@
+export type GenResponseBody<T> = { result: T };

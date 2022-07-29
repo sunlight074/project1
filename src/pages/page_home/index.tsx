@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     ];
 
     return (
-        <div className='m-10'>
+        <div className='container m-4'>
             {
             isLoading ? 
                 (

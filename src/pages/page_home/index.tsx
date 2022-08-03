@@ -7,17 +7,17 @@ const Home: React.FC = () => {
 
     const columns = [
       {
-        title: 'Name',
+        title: 'ชื่อ',
         dataIndex: 'name',
         key: 'name',
       },
       {
-        title: 'Age',
+        title: 'อายุ',
         dataIndex: 'age',
         key: 'age',
       },
       {
-        title: 'Address',
+        title: 'ที่อยู่',
         dataIndex: 'address',
         key: 'address',
       },
